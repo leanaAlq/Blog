@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Blog</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+<nav><%= link_to "All Posts", posts_path%>
+<% if admin_signed_in? %>
+    
+            <%= link_to "New Post", new_post_path %>
+
+      <%= link_to "Log Out", destroy_admin_session_path, method: :delete	%></nav>
+  <% end %>
+  <body>
+  <p class="notice"><%= notice %></p>
+<p class="alert"><%= alert %></p>
+    <%= yield %>
+
+  </body>
+</html>

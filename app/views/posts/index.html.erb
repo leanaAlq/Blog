@@ -1,0 +1,11 @@
+<% if admin_signed_in? %>
+    <%= render partial: "admin_index"%>
+<% else %>
+
+    <h2>All Posts</h2>
+    <% @posts.each do |post|%>
+
+    <h3><%= post.title%></h3>
+    <p><%= post.body.truncate(50)%><%= link_to "Read more", post_path(post)%></p>
+    <% end%>
+<% end %>

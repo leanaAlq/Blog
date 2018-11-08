@@ -1,0 +1,16 @@
+
+ <% if @post.admin %>
+<p>written by:  <%= link_to @post.admin.name %></p>
+<p>Posted <%= time_ago_in_words @post.created_at%> ago</p>
+
+<% else %>
+<p>written by: anynomus</p>
+<% end%>
+<% if admin_signed_in? %>
+    <%= render partial: "admin_show"%>
+   
+<% else %>
+
+<h2><%=@post.title%></h2>
+<p><%=@post.body %></p>
+<% end%>
