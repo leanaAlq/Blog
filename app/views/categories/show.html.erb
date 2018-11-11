@@ -1,5 +1,5 @@
 
-<% @category.posts.each do |post|%>
+<% @category.posts.each do                                                                                           |post|%>
 <%= post.title%>
  <p><%= post.body.truncate(50)%><%= link_to "Read more", post_path(post)%></p>
 <% end %>

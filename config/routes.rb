@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   # get "categories/new"
   # get "categories/show"
   # get "categories/index"
-  root "pages#home"
+  root "pages#home2"
 
   devise_for :admins
   resources :posts, :categories, :comments
