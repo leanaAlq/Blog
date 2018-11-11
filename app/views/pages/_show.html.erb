@@ -1,0 +1,6 @@
+<% category.posts.each do |post|%>
+<div><img class="home_categories" src="<%= post.image %>" alt="">
+<h4><%= post.title%></h4>
+ <p><%= post.body.truncate(50)%><%= link_to "Read more", post_path(post)%></p></div>
+
+<% end %>

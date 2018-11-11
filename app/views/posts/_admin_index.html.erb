@@ -1,8 +1,12 @@
-<h1>This is just for admins</h1>
+<h3>Great to see you around, <%= current_admin.name %>!</h3>
 <span><%= link_to "Log Out", destroy_admin_session_path, method: :delete	%> </span>
     <h2>All Posts</h2>
     <span><%= link_to("New Post ", new_post_path) %> </span>
     <% @posts.each do |post|%>
+    <div class= "category"> <%post.categories.each do |post_category|%>
+<span class= "category"><%= post_category.name%></span>
+<% end %></div>
+   <img class="post" src="<%= post.image%>" alt="">
     <h3><%= post.title%></h3>
       </span> <span><%= link_to("Delete Post ", post_path(post), method: :delete) %>     </span> </span></div>
     <p><%= post.body.truncate(50)%><%= link_to "Read more", post_path(post)%></p>

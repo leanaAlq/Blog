@@ -1,2 +1,19 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+
+ <h2>Latest Post</h2>
+ <div>
+ 
+ <img class="latest_post" src="<%= show_latest_post.image %>" alt="">
+ <h4><%= show_latest_post.title%></h4>
+ <p><%= show_latest_post.body.truncate(50)%><%= link_to "Read more", post_path(show_latest_post)%></p>
+ </div>
+ 
+
+        <% show_categories.each do |category|%>
+       <h2><%= category.name%></h2>
+       <div class="home_categories"> 
+          <%= link_to render(:partial => 'show', locals: {category: category}), category_path(category.id), class: "home_categories"%></div>
+    
+
+       <% end%>
+       
+       

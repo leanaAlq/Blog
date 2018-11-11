@@ -1,0 +1,4 @@
+<h2>All Categories</h2>
+<% @categories.each do |category|%>
+<div><%= category.name%></div><span><%= link_to("Delete  ", category_path(category), method: :delete) %> 
+<% end%>

@@ -1,16 +1,34 @@
-
- <% if @post.admin %>
-<p>written by:  <%= link_to @post.admin.name %></p>
+<div >
+<h1><%=@post.title%></h1>
 <p>Posted <%= time_ago_in_words @post.created_at%> ago</p>
 
+ <% if @post.admin %>
+<p>by:  <%= link_to @post.admin.name %></p>
 <% else %>
 <p>written by: anynomus</p>
 <% end%>
+<img class="post"src="<%= @post.image%>" alt="">
 <% if admin_signed_in? %>
     <%= render partial: "admin_show"%>
    
 <% else %>
 
-<h2><%=@post.title%></h2>
-<p><%=@post.body %></p>
+
+<div class="post"><p><%=@post.body %></p></div>
+<section class="section comments">
+    <div class="container">
+        <h2 class="subtitle is-5"><strong><%= @post.comments.count %></strong> Comments</h2>
+        <%= render @post.comments %>
+        <div class="comment-form">
+            <hr />
+            <h3 class="subtitle is-3">Leave a reply</h3>
+             <%= render partial: 'comment' %>
+        </div>
+    </div>
+</section>
 <% end%>
+
+
+
+
+</div>

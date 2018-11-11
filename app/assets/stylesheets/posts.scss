@@ -1,3 +1,28 @@
 // Place all the styles related to the Posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+img.post {
+  width: 650px;
+  height: 350px;
+}
+div {
+  width: 650px;
+  text-align: center;
+  align-self: center;
+  margin: auto;
+}
+body {
+  text-align: center;
+}
+div.category {
+  margin-top: 8px;
+}
+span.category {
+  background: rgba(0, 0, 255, 0.399);
+  border: blue;
+  margin: 2px;
+  padding: 5px;
+  font-size: 10px;
+  height: 20px;
+  width: 30px;
+}

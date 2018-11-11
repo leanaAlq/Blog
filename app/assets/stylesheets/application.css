@@ -13,3 +13,26 @@
  *= require_tree .
  *= require_self
  */
+@import "materialize";
+
+body {
+  text-align: center;
+}
+a.home_categories {
+  color: black;
+  text-decoration: none;
+}
+div.home_categories {
+  display: flex;
+  align-content: stretch;
+  justify-items: center;
+}
+
+img.home_categories {
+  width: 250px;
+  height: 200px;
+}
+img.latest_post {
+  width: 800px;
+  height: 500px;
+}

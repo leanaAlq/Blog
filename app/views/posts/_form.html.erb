@@ -3,9 +3,16 @@
 <%= f.label :title %>
 <%= f.text_field :title, required: true%>
 </div>
+<%= f.label :category_ids, "choose categories:" %>
+
+  <%= f.collection_select(:category_ids, Category.all, :id, :name)%>
+  </div>
+  <% link_to "add category", categories_new_path%>
 <div>
 <%= f.label :body %>
 <%= f.text_area :body, required: true%>
+<%= f.label :image %>
+<%= f.text_area :image, required: true%>
 </div>
 <%= f.submit %>
 <% end %>
