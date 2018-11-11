@@ -5,7 +5,6 @@ Rails.application.routes.draw do
   root "pages#home"
 
   devise_for :admins
-  resources :posts, :categories, :comments
-  resources :admins, only: [:show]
+  resources :posts, :categories, :comments, :admins, only: [:show]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
