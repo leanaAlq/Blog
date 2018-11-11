@@ -18,6 +18,9 @@
 body {
   text-align: center;
 }
+nav {
+  background-color: rebeccapurple;
+}
 a.home_categories {
   color: black;
   text-decoration: none;

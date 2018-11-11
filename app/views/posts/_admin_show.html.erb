@@ -1,5 +1,5 @@
 </span><span><%= link_to("  Edit Post ", edit_post_path(@post)) %> 
-<div class="post"><article><%=@post.body %></article></div>
+<div class="post"><article><%= @post.body %></article></div>
 <section class="section comments">
     <div class="container">
         <h2 class="subtitle is-5"><strong><%= @post.comments.count %></strong> Comments</h2>
