@@ -1,5 +1,6 @@
 module ApplicationHelper
   def markdown(text)
-    Redcarpet.new(text).to_html.html_safe
+    options = [:hard_wrap, :autolink, :no_intraemphasis]
+    Markdown.new(text, *options).to_html.html_safe
   end
 end

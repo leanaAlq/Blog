@@ -3,13 +3,33 @@
 <% else %>
 
     <h2>All Posts</h2>
-    <% @posts.each do |post|%>
+    <!--  <% @posts.each do |post|%>
  <div> <%post.categories.each do |post_category|%>
 <span class= "category"><%= post_category.name%></span>
 <% end %></div>
- <img src="<%= post.image%>" alt="">
+ <img class="post" src="<%= post.image%>" alt="">
     <h3><%= post.title%></h3>
-    <p><%= post.body.truncate(50)%><%= link_to "Read more", post_path(post)%></p>
+    <p><%=  raw markdown(post.body).truncate(100)%><%= link_to "Read more", post_path(post)%></p>
    <span> <%=post.comments.count %> comments</span>
-    <% end%>
+    <% end%> -->
+  
+<% @posts.each do |post|%>
+<div class="row latest center-align">
+    <div class="col s12 m7 center-align">
+      <div class="card">
+        <div class="card-image">
+          <img  src="<%= post.image%>">
+          <span class="card-title"><%= post.title%></span>
+        </div>
+        <div class="card-content">
+          <p><%=  raw markdown(post.body).truncate(300)%></p>
+        </div>
+        <div class="card-action">
+          <%= link_to "Read more", post_path(post), class:"cyan-text text-accent-4"%>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+  <% end %>
 <% end %>

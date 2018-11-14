@@ -1,4 +1,8 @@
 <h2>All Categories</h2>
+<% if admin_signed_in? %>
+  <%= render partial: "index"%>
+  <% end%>
 <% @categories.each do |category|%>
-<div><%= category.name%></div><span><%= link_to("Delete  ", category_path(category), method: :delete) %> 
+<div><%= category.name%></div><span>
+
 <% end%>

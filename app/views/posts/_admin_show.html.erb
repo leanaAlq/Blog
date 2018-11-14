@@ -1,12 +1,12 @@
-</span><span><%= link_to("  Edit Post ", edit_post_path(@post)) %> 
-<div class="post"><article><%= @post.body %></article></div>
+<div><%= link_to("  Edit Post ", edit_post_path(@post)) %></div> 
+<div class="post"><article><%=raw  markdown(@post.body) %></article></div>
 <section class="section comments">
     <div class="container">
-        <h2 class="subtitle is-5"><strong><%= @post.comments.count %></strong> Comments</h2>
+        <span class="comment"><strong><%= @post.comments.count %> Comments</strong> </span>
         <%= render @post.comments %>
         <div class="comment-form">
             <hr />
-            <h3 class="subtitle is-3">Leave a reply</h3>
+             <span class="comment"><strong>Leave a reply</strong></span>
              <%= render partial: 'comment' %>
         </div>
     </div>

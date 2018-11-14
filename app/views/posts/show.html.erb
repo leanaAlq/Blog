@@ -1,31 +1,37 @@
-<div >
-<h1><%=@post.title%></h1>
-<p>Posted <%= time_ago_in_words @post.created_at%> ago</p>
-
- <% if @post.admin %>
-<p>by:  <%= link_to @post.admin.name %></p>
+<div class="article" >
+<div class="image-title"><img class="post"src="<%= @post.image%>" alt="">
+<h1 class="bottom-left"><%=@post.title%></h1></div>
+<div><% if @post.admin %>
+<span class="post-info">by:  <%= link_to @post.admin.name %></span>
 <% else %>
-<p>written by: anynomus</p>
-<% end%>
-<img class="post"src="<%= @post.image%>" alt="">
+<span class="post-info">written by: anynomus</span>
+<% end%><span class="post-info">Posted <%= time_ago_in_words @post.created_at%> ago</span>
+<span class="post-info"><%= @post.reading_time%> min read</span>
+ </div>
+
+
 <% if admin_signed_in? %>
     <%= render partial: "admin_show"%>
    
 <% else %>
 
 
-<div class="post"><p><%=@post.body %></p></div>
-<section class="section comments">
-    <div class="container">
-        <h2 class="subtitle is-5"><strong><%= @post.comments.count %></strong> Comments</h2>
-        <%= render @post.comments %>
+<div class="post"><article><%=  raw markdown(@post.body) %></article></div>
+
+    
+        <span class="comment"><strong><%= @post.comments.count %></strong> Comments</span>
+      <!--<%= render partial: "comments/comment2"%> -->
+     <div class="box">
+     <ul class="comment-section">
+     <%= render @post.comments %>
+     </ul></div> 
+       
         <div class="comment-form">
-            <hr />
-            <h3 class="subtitle is-3">Leave a reply</h3>
+            <span class="comment">Leave a reply</span>
              <%= render partial: 'comment' %>
         </div>
-    </div>
-</section>
+    
+
 <% end%>
 
 

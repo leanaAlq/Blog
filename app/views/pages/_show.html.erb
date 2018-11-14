@@ -1,6 +1,30 @@
+<!--
 <% category.posts.each do |post|%>
 <div><img class="home_categories" src="<%= post.image %>" alt="">
-<h4><%= post.title%></h4>
- <p><%= post.body.truncate(50)%><%= link_to "Read more", post_path(post)%></p></div>
+<h4 ><%= post.title%></h4>
+ <p><%= raw markdown(post.body).truncate(300)%><%= link_to "Read more", post_path(post)%></p></div>
 
 <% end %>
+-->
+
+<div class="row tab-cat center-align">
+ <% category.posts.each do |post|%>
+
+<div class="cat-col"> <div class="col s1 ">
+      <div class="card small">
+        <div class="card-image">
+          <img class="materialboxed" src="<%= post.image %>">
+          <span class="card-title"><%= post.title%></span>
+        </div>
+        <div class="card-content">
+          <p><%= raw markdown(post.body).truncate(300)%></p>
+        </div>
+        <div class="card-action">
+          <%= link_to "Read more", post_path(post), class:"cyan-text text-accent-4"%>
+        </div>
+      </div>
+    </div>
+ </div>
+   
+<% end %>
+ </div>

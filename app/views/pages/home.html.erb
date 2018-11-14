@@ -1,19 +1,45 @@
 
  <h2>Latest Post</h2>
- <div>
+ <div class="row latest center-align">
+    <div class="col s12 m7 center-align">
+      <div class="card">
+        <div class="card-image">
+          <img  src="<%= show_latest_post.image %>">
+          <span class="card-title"><%= show_latest_post.title%></span>
+        </div>
+        <div class="card-content">
+          <p><%= raw markdown(show_latest_post.body).truncate(300)%></p>
+        </div>
+        <div class="card-action">
+          <%= link_to "Read more", post_path(show_latest_post), class:"cyan-text text-accent-4"%>
+        </div>
+      </div>
+    </div>
+  </div>
+     <div class="row tab ">
+    <div class="col s12">
+      <ul class="tabs ">
+      <% i=1%>
+       <% show_categories.each do |category|%>
+
+        <li class="tab col s3 cyan-text text-accent-4"><a class="active cyan-text text-accent-4" href="#test<%=i%>"><%= category.name%></a></li>
+        
+       <% i+=1%>
+        <% end%>
+      </ul>
+    </div>
+    <%j=1%>
+    <% show_categories.each do |category|%>
+    <div id="test<%=j%>" class="col s12"><%= link_to render(:partial => 'show', locals: {category: category}), category_path(category.id), class: "home_categories"%></div>
+     
+    <% j +=1%>
+   
+    <%end%>
+  </div>      
  
- <img class="latest_post" src="<%= show_latest_post.image %>" alt="">
- <h4><%= show_latest_post.title%></h4>
- <p><%= show_latest_post.body.truncate(50)%><%= link_to "Read more", post_path(show_latest_post)%></p>
+
  </div>
  
 
-        <% show_categories.each do |category|%>
-       <h2><%= category.name%></h2>
-       <div class="home_categories"> 
-          <%= link_to render(:partial => 'show', locals: {category: category}), category_path(category.id), class: "home_categories"%></div>
-    
-
-       <% end%>
-       
+        
        

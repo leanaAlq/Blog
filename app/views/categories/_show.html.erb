@@ -1,4 +1,4 @@
 <% @category.posts.each do |post|%>
 <%= post.title%>
- <p><%= post.body.truncate(50)%><%= link_to "Read more", post_path(post)%></p>
+ <p><%= raw markdown(post.body).truncate(300)%><%= link_to "Read more", post_path(post)%></p>
 <% end %>

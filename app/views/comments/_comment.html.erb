@@ -1,14 +1,21 @@
-<div class="box">
-  <article class="media">
-    <div class="media-content">
-      <div class="content">
-        <p>
-          <strong><%= comment.name %>:</strong>
-          <%= comment.comment %>
-        </p>
-      </div>
-    </div>
-     <%= link_to 'Delete', comment_path(comment),
-                  method: :delete, class: "button is-danger", data: { confirm: 'Are you sure?' } %>
-  </article>
-</div>Markup
+
+
+
+    <li class="comment ">
+       <div class="comment"> 
+        </a> <div class="info">
+      <img class="comment" src="https://webiconspng.com/wp-content/uploads/2016/11/account_avatar_human_male_man_people_person_profile_user_users_icon_325966-300x300.png" alt="Profile Avatar" title="Anie Silverston" />
+
+            <span class="user-comment"><%= comment.name %></span><span class="comment-time">    4 hours ago</span>
+        </div>
+        <div><p class="comment"><%= comment.comment %></p></div>
+        
+         <%= link_to 'Delete', comment_path(comment),
+                  method: :delete, class: "button is-danger", data: { confirm: 'Are you sure?' } %></div>
+      
+    </li>  
+    
+   
+    
+  
+

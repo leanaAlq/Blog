@@ -6,7 +6,7 @@ ruby '2.5.3'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.1'
 gem 'devise'
-gem 'jquery-rails'
+
 gem 'redcarpet'
 gem 'cloudinary'
 gem 'rest-client', '~>2.0'

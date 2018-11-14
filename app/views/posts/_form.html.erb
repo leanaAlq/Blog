@@ -1,18 +1,23 @@
-<%= form_for @post do |f|%>
+<%= form_for @post ,html: {:class => 'x'} do |f|%>
 <div>
+
 <%= f.label :title %>
 <%= f.text_field :title, required: true%>
 </div>
-<%= f.label :category_ids, "choose categories:" %>
-
-  <%= f.collection_select(:category_ids, Category.all, :id, :name)%>
-  </div>
-  <% link_to "add category", categories_new_path%>
-<div>
-<%= f.label :body %>
-<%= f.text_area :body, required: true%>
 <%= f.label :image %>
 <%= f.text_area :image, required: true%>
+<div><%= f.label :category_ids, "choose categories:" %></div>
+<p>
+<%= f.collection_check_boxes(:category_ids, Category.all, :id, :name) %>
+<%#= f.collection_check_boxes(:category_ids, Category.all, :id, :name) { |b| b.label(text: "Test") { b.check_box} } %>
+</p>
+  </div>
+  <%= link_to "add category", new_category_path	%>
+<div>
+<div><%= f.label :body %></div>
+
+<%= f.text_area :body, required: true%>
+
 </div>
 <%= f.submit %>
 <% end %>
