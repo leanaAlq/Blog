@@ -18,16 +18,16 @@ Scientific/Tech Blog
 
 
 ## Configuration:
-- ruby 2.5.3
-- rails 5.2.1
+- Ruby 2.5.3
+- Rails 5.2.1
 
 ## Database 
-- [presql]()
+- [PostgreSQL](https://www.postgresql.org/docs/9.2/app-psql.html)
 
 ## Status:
 In Progress
 ## Special Thanks:
-- [Jack]()
-- [Moath]()
+- [Jack](https://github.com/ga-wolf)
+- [Moath](https://github.com/mfalthaw)
 
 
