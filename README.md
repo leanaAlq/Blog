@@ -1,24 +1,33 @@
-# README
+# أُفق Blog 
+## Description:
+Scientific/Tech Blog 
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
+## Built with:
+- Ruby
+- Ruby on Rails
+- Javascript
+- Jquery
+- HTML
+- CSS 
 
-* Ruby version
+## System dependencies:
+- [Devise](https://github.com/plataformatec/devise)
+- [Materialize](https://materializecss.com/color.html)
+- [Redcarpet](https://github.com/vmg/redcarpet)
 
-* System dependencies
 
-* Configuration
+## Configuration:
+- ruby 2.5.3
+- rails 5.2.1
 
-* Database creation
+## Database 
+- [presql]()
 
-* Database initialization
+## Status:
+In Progress
+## Special Thanks:
+- [Jack]()
+- [Moath]()
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
